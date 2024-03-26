@@ -1,7 +1,9 @@
  #ligand predictor
+pip install scikit-learn
 
 import streamlit as st
 import pandas as pd
+
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import OneHotEncoder
@@ -34,6 +36,7 @@ def main():
 
         # Step 2: Model Training
         X_train, X_test, y_train, y_test = train_test_split(features, labels_encoded, test_size=0.2, random_state=42)
+         
 
         # Train the model
         model.fit(X_train.values.reshape(-1, 1), y_train)
